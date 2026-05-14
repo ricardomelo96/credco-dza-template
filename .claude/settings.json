@@ -1,0 +1,30 @@
+{
+  "_comentario": "Configurações do Claude Code pra este projeto. Aplicam-se SEMPRE que você abre `claude` nesta pasta. Personalize conforme sua preferência.",
+
+  "model": "claude-sonnet-4-6",
+  "_comentario_model": "Modelo default. Opções: claude-haiku-4-5 (rápido/barato), claude-sonnet-4-6 (equilíbrio), claude-opus-4-7 (mais inteligente, mais caro). Pode trocar a qualquer momento com /model.",
+
+  "permissions": {
+    "_comentario_permissions": "Controle granular do que Claude pode fazer sem perguntar. Comece com a lista abaixo (segura) e expanda conforme confiar.",
+    "allow": [
+      "Bash(ls *)",
+      "Bash(pwd)",
+      "Bash(cd *)",
+      "Bash(cat *)",
+      "Bash(git status)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(npm test*)",
+      "Bash(npm run lint*)",
+      "Read",
+      "Glob",
+      "Grep"
+    ],
+    "deny": [
+      "Bash(rm -rf*)",
+      "Bash(sudo*)",
+      "Bash(curl * | sh)",
+      "Bash(curl * | bash)"
+    ]
+  }
+}

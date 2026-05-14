@@ -1,0 +1,21 @@
+{
+  "_comentario": "Hooks disparam AUTOMATICAMENTE em eventos do Claude Code. Diferente de skills (que VOCÊ invoca), hooks rodam sozinhos. Exemplo abaixo: toda vez que você abre uma sessão, Claude recebe lembrete da brand voice automaticamente.",
+
+  "hooks": {
+
+    "SessionStart": [
+      {
+        "_comentario": "Dispara toda vez que você abre `claude` nesta pasta. Útil pra carregar contexto, alertar sobre coisas importantes, ou injetar lembrete da brand voice.",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'BRAND VOICE: tom direto, sem jargão, anti-selling. Sempre referencie CLAUDE.md ao escrever conteúdo do projeto.'"
+          }
+        ]
+      }
+    ]
+
+  },
+
+  "_proximos_passos": "Conforme seu projeto crescer, adicione mais hooks. Eventos úteis: PreToolUse (validar antes de executar), PostToolUse (linter automático depois de edit), SessionEnd (salvar aprendizado). Doc oficial: https://code.claude.com/docs/en/hooks"
+}

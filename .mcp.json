@@ -1,0 +1,36 @@
+{
+  "_comentario": "Este arquivo configura os MCPs (Model Context Protocol) do projeto. Cada MCP é uma 'porta' que o Claude usa pra conectar com sistemas externos (banco, web, GitHub, etc). Os 3 MCPs abaixo são os essenciais pra começar — adicione mais conforme seu projeto precisar.",
+
+  "mcpServers": {
+
+    "filesystem": {
+      "_comentario": "Permite Claude ler/escrever em pastas específicas além do projeto atual. Útil quando você precisa acessar arquivos em outras pastas (downloads, drive sincronizado, etc). Edite o array de pastas conforme sua necessidade.",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/SEU_USUARIO/Documents",
+        "/Users/SEU_USUARIO/Downloads"
+      ]
+    },
+
+    "context7": {
+      "_comentario": "Trás documentação ATUALIZADA de qualquer biblioteca/framework. Anti-hallucination essencial — sem isso, Claude inventa API antiga. Use sempre que estiver trabalhando com biblioteca específica (React, Next.js, Supabase, etc).",
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"],
+      "env": {
+        "CONTEXT7_API_KEY": "${CONTEXT7_API_KEY}"
+      }
+    },
+
+    "brave-search": {
+      "_comentario": "Pesquisa web em tempo real. Necessário quando seu agente precisa de info DEPOIS do knowledge cutoff do Claude (jan/2026). Ex: 'qual o preço atual do Bitcoin?', 'quais bibliotecas novas saíram esse mês?'.",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-brave-search"],
+      "env": {
+        "BRAVE_API_KEY": "${BRAVE_API_KEY}"
+      }
+    }
+
+  }
+}

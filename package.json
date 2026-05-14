@@ -1,0 +1,16 @@
+{
+  "name": "credco-dza-template",
+  "version": "1.0.0",
+  "description": "Template oficial do curso Do Zero ao Agente — Credco. Estrutura inicial pra construir agentes IA com Claude Code.",
+  "scripts": {
+    "_comentario_inicial": "Este package.json é mínimo. Conforme seu projeto precisar de bibliotecas Node, adicione aqui via 'npm install <pacote>'.",
+    "test": "echo \"Nenhum teste configurado ainda — adicione conforme seu projeto crescer\" && exit 0"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": "Credco",
+  "license": "MIT"
+}

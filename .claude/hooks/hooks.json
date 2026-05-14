@@ -1,21 +1,24 @@
 {
-  "_comentario": "Hooks disparam AUTOMATICAMENTE em eventos do Claude Code. Diferente de skills (que VOCÊ invoca), hooks rodam sozinhos. Exemplo abaixo: toda vez que você abre uma sessão, Claude recebe lembrete da brand voice automaticamente.",
+  "_AVISO_IMPORTANTE": "⚠️ Claude Code NÃO lê hooks deste arquivo. Hooks só funcionam dentro de .claude/settings.json (ou ~/.claude/settings.json pra global). Este arquivo é apenas REFERÊNCIA — copia o conteúdo daqui pro settings.json se quiser usar.",
 
-  "hooks": {
-
-    "SessionStart": [
-      {
-        "_comentario": "Dispara toda vez que você abre `claude` nesta pasta. Útil pra carregar contexto, alertar sobre coisas importantes, ou injetar lembrete da brand voice.",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "echo 'BRAND VOICE: tom direto, sem jargão, anti-selling. Sempre referencie CLAUDE.md ao escrever conteúdo do projeto.'"
-          }
-        ]
-      }
-    ]
-
+  "_referencia_exemplos_de_hooks": {
+    "SessionStart_exemplo": {
+      "_descrição": "Dispara toda vez que você abre `claude` nesta pasta. Útil pra carregar contexto, alertar coisas importantes, ou injetar brand voice.",
+      "tipo": "command",
+      "command": "echo 'BRAND VOICE: tom direto, sem jargão. Sempre referencie CLAUDE.md.'"
+    },
+    "PostToolUse_exemplo": {
+      "_descrição": "Dispara DEPOIS de cada uso de tool. Útil pra linter automático, validação.",
+      "matcher": "Edit|Write",
+      "tipo": "command",
+      "command": "echo 'arquivo editado'"
+    },
+    "SessionEnd_exemplo": {
+      "_descrição": "Dispara quando sessão termina. Útil pra salvar aprendizado no Segundo Cérebro.",
+      "tipo": "command",
+      "command": "python3 ~/cerebro/flush.py"
+    }
   },
 
-  "_proximos_passos": "Conforme seu projeto crescer, adicione mais hooks. Eventos úteis: PreToolUse (validar antes de executar), PostToolUse (linter automático depois de edit), SessionEnd (salvar aprendizado). Doc oficial: https://code.claude.com/docs/en/hooks"
+  "_onde_configurar_de_verdade": "Os hooks ativos deste projeto estão em .claude/settings.json. Doc oficial: https://code.claude.com/docs/en/hooks"
 }

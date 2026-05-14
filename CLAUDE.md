@@ -224,11 +224,11 @@ Exemplos do que entra aqui:
   GitHub, etc). Lista o que tá configurado em `.mcp.json`.
 -->
 
-| MCP | O que conecta |
-|---|---|
-| `filesystem` | Acesso seguro a pastas específicas |
-| `context7` | Docs atualizadas de bibliotecas (anti-hallucination) |
-| `brave-search` | Pesquisa web em tempo real |
+| MCP | Status | O que conecta |
+|---|---|---|
+| `context7` | ✅ ativo | Docs atualizadas de bibliotecas (anti-hallucination) |
+| `brave-search` | ✅ ativo | Pesquisa web em tempo real |
+| `filesystem` | ⚙️ desabilitado por default | Acesso a pastas específicas. Habilite em `.mcp.json` ajustando paths pro seu username |
 
 <!-- Adicione conforme instalar -->
 

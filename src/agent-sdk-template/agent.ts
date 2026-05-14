@@ -33,7 +33,7 @@ import { TOOLS, executeTool } from './tools.js';
 config({ path: '../../.env' });
 
 const client = new Anthropic();
-const MODEL = 'claude-haiku-4-5'; // Haiku = barato/rápido. Pra tarefa complexa, troca pra sonnet/opus.
+const MODEL = 'claude-haiku-4-5-20251001'; // ID canônico. Haiku = barato/rápido. Pra tarefa complexa, troca pra sonnet/opus.
 
 // ═══════════════════════════════════════════════════════════════
 //  CAIXA 1 + 3: PERSONA + KNOWLEDGE

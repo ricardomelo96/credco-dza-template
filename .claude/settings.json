@@ -26,5 +26,19 @@
       "Bash(curl * | sh)",
       "Bash(curl * | bash)"
     ]
+  },
+
+  "_comentario_hooks": "Hooks disparam AUTOMATICAMENTE em eventos. Configurados AQUI dentro de settings.json (Claude Code só lê hooks desse arquivo — não de .claude/hooks/hooks.json separado). Exemplo abaixo: toda sessão começa com lembrete da brand voice.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'BRAND VOICE: tom direto, sem jargão, anti-selling. Sempre referencie CLAUDE.md ao escrever conteúdo do projeto.'"
+          }
+        ]
+      }
+    ]
   }
 }

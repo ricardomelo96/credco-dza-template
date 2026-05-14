@@ -54,19 +54,37 @@ cd meu-primeiro-agente
 
 ---
 
-## Passo 3 — Configurar API key
+## Passo 3 — Login no Claude Code (OAuth)
+
+Claude Code 2.x autentica via OAuth (mais simples que copiar API key). Primeira vez que você roda `claude`, ele abre o navegador automaticamente.
+
+```bash
+# Rode dentro da pasta do projeto
+claude
+
+# Se for primeira vez:
+# - Vai abrir https://claude.ai no navegador
+# - Faz login com sua conta Anthropic
+# - Volta pro terminal — já tá autenticado
+```
+
+Pronto. Pra a maioria dos usos do Claude Code (skills, hooks, plugins), isso basta.
+
+---
+
+## Passo 3.5 — API key (SÓ se for usar Agent SDK no D2)
+
+Você só precisa dessa parte se for rodar `src/agent-sdk-template/` no Bloco E do D2 (Agent SDK app autônomo).
 
 ```bash
 # Copia o template
 cp .env.example .env
 
-# Abre pra editar (escolha um):
-nano .env           # terminal puro
-code .env           # se tiver VSCode
-open .env           # Mac, abre no editor padrão
+# Edita
+nano .env           # OU: code .env / open .env
 ```
 
-Dentro do arquivo, **substitua** `ANTHROPIC_API_KEY=` por sua chave real:
+Cole sua chave real:
 
 ```
 ANTHROPIC_API_KEY=cole-sua-chave-completa-aqui
@@ -75,13 +93,14 @@ ANTHROPIC_API_KEY=cole-sua-chave-completa-aqui
 **Como pegar a chave:**
 
 1. Acesse [console.anthropic.com](https://console.anthropic.com)
-2. Login (mesma conta do seu Claude Code)
-3. Menu **API Keys** → **Create Key**
-4. Copia o código que aparece (só aparece UMA vez — guarde)
-5. Cola no `.env`
-6. Salva (`Ctrl+O` + Enter no nano, ou `Cmd+S` no VSCode)
+2. Menu **API Keys** → **Create Key**
+3. Copia o código (só aparece UMA vez — guarde fora do projeto também)
+4. Cola no `.env`
+5. Salva
 
 ⚠️ **NUNCA** commit o `.env` no git. O `.gitignore` já protege — mas confira.
+
+> 💡 **Diferença:** Claude Code (CLI) usa **OAuth via navegador**. Agent SDK (TypeScript app autônomo) usa **API key no `.env`**. Dois mecanismos pra dois usos diferentes — não confunda.
 
 ---
 

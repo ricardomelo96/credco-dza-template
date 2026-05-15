@@ -1,22 +1,25 @@
 ---
-# ═══════════════════════════════════════════════════════════════
-# SKILL.md — Skill EXEMPLO comentada
-# ═══════════════════════════════════════════════════════════════
-#
-# Esta skill é um EXEMPLO PEDAGÓGICO pra você entender a anatomia.
-# Use ela como modelo pras suas próprias.
-#
-# Pra testar: dentro do Claude Code, digite `/resumo-do-dia`
-# ═══════════════════════════════════════════════════════════════
-
 description: Resume o que foi feito hoje neste projeto e flagga riscos. Use quando o usuário pergunta o que mudou, quer mensagem de commit, ou pede review do diff.
-
-# 💡 SOBRE O "description":
-# - É o campo mais importante do frontmatter
-# - Claude lê ISSO pra decidir quando usar a skill automaticamente
-# - Inclua palavras-chave que o usuário falaria naturalmente
-# - Mantenha em 1-2 linhas
 ---
+
+<!--
+═══════════════════════════════════════════════════════════════
+  SKILL.md — Skill EXEMPLO comentada
+═══════════════════════════════════════════════════════════════
+
+  Esta skill é um EXEMPLO PEDAGÓGICO pra você entender a anatomia.
+  Use ela como modelo pras suas próprias.
+
+  Pra testar: dentro do Claude Code, digite `/resumo-do-dia`
+
+  💡 SOBRE O "description" (campo acima entre os `---`):
+  - É o campo mais importante do frontmatter
+  - Claude lê ISSO pra decidir quando usar a skill automaticamente
+  - Inclua palavras-chave que o usuário falaria naturalmente
+  - Mantenha em 1-2 linhas
+═══════════════════════════════════════════════════════════════
+-->
+
 
 # Skill: Resumo do Dia
 
@@ -60,7 +63,7 @@ Mantenha resposta em **menos de 200 palavras**. Tom: direto, sem floreio.
   2. Mude o comando bash entre !`...` pra outro comando (ou
      adicione mais comandos)
   3. Mude as "Instruções para o Claude" pra ele agir diferente
-  4. Salve e digite `/reload-plugins` no Claude Code
+  4. Salve, saia do Claude Code (Ctrl+D) e abra de novo com `claude`
   5. Invoque com `/resumo-do-dia` (ou o nome que você der à pasta)
 
   EXEMPLOS de variações que vocês podem criar:

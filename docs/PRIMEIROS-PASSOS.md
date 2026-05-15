@@ -40,8 +40,8 @@ Se aparecer um número de versão (ex: `2.5.x`), tá funcionando.
 # Vá pra pasta onde você quer guardar seus projetos
 cd ~/Documents      # ou onde preferir
 
-# Clone o template (substitua URL pela final quando Ricardo passar)
-git clone https://github.com/credco/credco-dza-template meu-primeiro-agente
+# Clone o template
+git clone https://github.com/ricardomelo96/credco-dza-template meu-primeiro-agente
 
 # Entre na pasta
 cd meu-primeiro-agente

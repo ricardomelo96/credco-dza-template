@@ -49,11 +49,11 @@ mkdir -p .claude/skills/minha-nova-skill
 nano .claude/skills/minha-nova-skill/SKILL.md
 # (ou: code .claude/skills/minha-nova-skill/SKILL.md)
 
-# 3. Recarregar no Claude Code
-# Dentro do Claude Code, digite:
-/reload-plugins
+# 3. Recarregar — saia do Claude Code (Ctrl+D) e abra de novo:
+exit
+claude
 
-# 4. Invocar
+# 4. Invocar a nova skill
 /minha-nova-skill
 ```
 

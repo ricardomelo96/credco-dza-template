@@ -85,6 +85,21 @@ async function agentLoop(userInput: string) {
       return finalText;
     }
 
+    if (response.stop_reason === 'max_tokens') {
+      // Resposta CORTADA — atingiu o limite max_tokens (2048 acima).
+      // Em produção: aumenta max_tokens, comprime input, ou usa streaming.
+      // Aqui no didático: extrai o que veio, avisa, e retorna.
+      const textBlocks = response.content.filter((c) => c.type === 'text');
+      const partial = textBlocks
+        .map((c) => (c as Anthropic.TextBlock).text)
+        .join('\n');
+
+      console.warn('\n⚠️  Resposta cortada (max_tokens=2048). Aumente o limite ou simplifique o input.');
+      console.log('\n💬 Agente (parcial):\n');
+      console.log(partial);
+      return partial;
+    }
+
     if (response.stop_reason === 'tool_use') {
       // Decidiu USAR FERRAMENTA — executa e volta pro think
       const toolUse = response.content.find(

@@ -1,32 +1,31 @@
 ---
-# ═══════════════════════════════════════════════════════════════
-# Subagent EXEMPLO — Revisor de Conteúdo
-# ═══════════════════════════════════════════════════════════════
-#
-# Subagents são "Claudes especializados" que rodam em CONTEXTO
-# PRÓPRIO. Diferente de skill (que é UMA instrução), subagent é
-# uma PERSONA completa.
-#
-# Use este arquivo como exemplo. Copie, modifique pro seu caso.
-# ═══════════════════════════════════════════════════════════════
-
 name: revisor-conteudo
-
 description: Revisa qualquer texto por clareza, ritmo, brand voice e remoção de jargão. Use quando precisar de revisão crítica de copy, artigo, e-mail, post pra rede social, ou qualquer conteúdo escrito.
-
-# 💡 SOBRE OS CAMPOS:
-#
-# - name: nome interno (Claude principal usa pra invocar)
-# - description: Claude principal lê pra decidir quando delegar.
-#   Quanto mais específica, melhor a invocação automática.
-# - tools: lista das ferramentas que ESTE subagent pode usar
-# - model: qual modelo roda (haiku rápido/barato, sonnet equilibrado,
-#   opus inteligente/caro). Sonnet é default seguro.
-
 tools: Read, Glob, Grep
-
 model: sonnet
 ---
+
+<!--
+═══════════════════════════════════════════════════════════════
+  Subagent EXEMPLO — Revisor de Conteúdo
+═══════════════════════════════════════════════════════════════
+
+  Subagents são "Claudes especializados" que rodam em CONTEXTO
+  PRÓPRIO. Diferente de skill (que é UMA instrução), subagent é
+  uma PERSONA completa.
+
+  Use este arquivo como exemplo. Copie, modifique pro seu caso.
+
+  💡 SOBRE OS CAMPOS (entre os `---` acima):
+  - name: nome interno (Claude principal usa pra invocar)
+  - description: Claude principal lê pra decidir quando delegar.
+    Quanto mais específica, melhor a invocação automática.
+  - tools: lista das ferramentas que ESTE subagent pode usar
+  - model: qual modelo roda (haiku rápido/barato, sonnet equilibrado,
+    opus inteligente/caro). Sonnet é default seguro.
+═══════════════════════════════════════════════════════════════
+-->
+
 
 # Revisor de Conteúdo
 

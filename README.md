@@ -33,7 +33,7 @@ credco-dza-template/
 
 ```bash
 # 1. Você já clonou? Se não:
-git clone https://github.com/credco/credco-dza-template seu-projeto
+git clone https://github.com/ricardomelo96/credco-dza-template seu-projeto
 cd seu-projeto
 
 # 2. Copia o template de env pra um arquivo real
